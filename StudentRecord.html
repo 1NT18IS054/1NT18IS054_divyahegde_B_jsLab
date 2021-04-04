@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>First Page</title>
+        <style type="text/css">
+        *{
+            font-family: cursive;
+        }
+        body{
+            background: url("https://i.pinimg.com/originals/fd/e5/f5/fde5f511936bb76f79c5a1c4d3f89888.png");
+          
+            background-size: cover;
+   background-repeat: no-repeat;
+   background-position: center center; 
+   background-attachment: fixed;
+     
+        }
+            .cnt{
+                margin-left: 400px;
+                margin-top: 100px;
+                border:1px solid black ;
+                background-color:rgba(0,0,0, 0.7);
+                border-radius: 15px;
+                padding: 20px;
+                width: 500px;
+                color: white;
+
+            }
+           label{
+               margin-left: 70px;;
+           }
+            input,select{
+                padding: 5px;
+                border-radius: 5px;
+                margin-left: 150px;
+                background-color: white;
+                border-color: #e0e0d1;
+                font-size: 15px;
+                cursor: pointer;
+              
+
+            }
+            input:focus{
+                border-color: black;
+            }
+            input[type="submit"]{
+               margin-left: 115px;
+                background-color:  #0066ff;
+                color: white;
+                font-weight: bold;
+                width: 60%;
+            
+            }
+            input[type="submit"]:hover{
+                background-color:#3385ff;
+            }
+
+        </style>
+    </head>
+    <body>
+        <div class="cnt"> 
+            <h2 style="text-align: center;">Student details</h2>
+            <hr>
+        <form>
+            <br>
+            <label>First Name :</label><br><br>
+            <input type="text" placeholder="Enter your first name" id="fname" required>
+            <br><br>
+            <label>Last Name :</label><br><br>
+            <input type="text" placeholder="Enter your last name" id="lname" required>
+            <br><br>
+            <label>Email id :</label><br><br>
+            <input type="email" placeholder="Enter your mail id" required>
+            <br><br>
+            <label>Department :</label><br><br>
+           <select>
+               <option value="ISE">ISE</option>
+               <option value="CSE">CSE</option>
+               <option value="ECE">ECE</option>
+               <option value="EEE">EEE</option>
+               <option value="ME">ME</option>
+               <option value="CE">CE</option>
+           </select>
+            <br><br>
+            <label>Semester :</label><br><br>
+            <input type="number" placeholder="Enter your semester" id="sem" required>
+            <br><br><br> 
+            <input type="submit" value="Submit" onclick="message()">
+
+
+        </form>
+    </div>
+    <script>function message(){
+        var name=document.getElementById("fname").value; 
+        alert("Hello "+name+", your details are recorded. Thank You");
+    }
+        </script>
+    </body>
+</html>
