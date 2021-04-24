@@ -1,0 +1,81 @@
+<!-- title : session 4 -->
+<!-- description : Number game is a game in which each player has to enter a number which is the sum of number last entered by him and his opponent. The player entering wrong sum loses.-->
+<!-- author Divya Hegde@1NT18IS054 -->
+<!-- Date:23-04-2021  -->
+<!DOCTYPE html>
+  <head>
+    <title>Number game</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    
+  </head>
+
+  <body>
+      <h2>Number Game</h2>
+    <input type="text" id="player1">
+           <button id="submit1">Player 1 Click Here</button>
+           <input type="text" id="player2" style="margin-left: 100px;">
+           <button id="submit2">Player 2 Click Here</button><br>
+           <br>
+           <h3>Total Entries</h3>
+           <p id="arr"></p>
+           <br>
+           <h3>Player 1 Entries</h3>
+           <p id="arr1"></p>
+           <br><br>
+           <h3>Player 2 Entries</h3>
+           <p id="arr2"></p>
+           <br><br>
+           <h2 id="win"></h2>
+    <script>
+var play1={
+    name:"ABC",
+    log:[],
+    detail:function (){
+        document.getElementById('arr1').innerHTML=(this.log);
+
+    },
+    usn:101
+}
+var play2={
+    name:"XYZ",
+    log:[],
+    detail:function (){
+        document.getElementById('arr2').innerHTML=(this.log);
+
+    },
+    usn:102
+}
+var fibonacci=[1,1,2,3,5,8,13,21,34,55,89];
+var fib=[];
+let sub1=document.getElementById('submit1');
+    sub1.addEventListener('click',()=>{
+    fib.push(document.getElementById('player1').value);
+    play1.log.push(document.getElementById('player1').value);
+    play1.detail();
+    if(fib[fib.length-1]!=fibonacci[fib.length-1]){
+        document.getElementById('win').innerHTML=play2.name+" won!";
+    }
+    else{
+        document.getElementById("arr").innerHTML=fib;
+        document.getElementById('player1').value="";
+    }
+
+})
+let sub2=document.getElementById('submit2');
+    sub2.addEventListener('click',()=>{
+    fib.push(document.getElementById('player2').value);
+    play2.log.push(document.getElementById('player2').value);
+    play2.detail();
+    if(fib[fib.length-1]!=fibonacci[fib.length-1]){
+        document.getElementById('win').innerHTML=play1.name+" won!";
+    }
+    else{
+        document.getElementById("arr").innerHTML=fib;
+        document.getElementById('player2').value="";
+    }
+
+})
+    </script>
+  </body>
+</html>
