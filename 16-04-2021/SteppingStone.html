@@ -1,0 +1,104 @@
+<!-- title : session 3 -->
+<!-- description :Player can build his path by clicking the current stone and thereby reach the final stone -->
+<!-- author Divya Hegde@1NT18IS054 -->
+<!-- Date:16-04-2021  -->
+<!DOCTYPE html>
+  <head>
+    <title>Stepping stone</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style>
+        #area1{
+            width: 250px;
+   padding: 20px;
+   border: 5px solid red;
+
+background-color: red;
+        }
+    #area2{
+        width: 300px;
+   padding:20px;
+   border: 5px solid green;
+display: none;
+margin-left: 100px;;
+background-color:green;
+}
+#area3{  width: 350px;
+   padding:20px;
+   border: 5px solid yellow;
+   display: none;
+   margin-left: 200px;
+background-color: yellow;
+}
+#area4{
+    width: 400px;
+        padding: 20px;
+        border: 5px solid palevioletred ;
+     display: none;
+     margin-left: 300px;
+        background-color: palevioletred;
+        
+}
+
+    </style>
+  </head>
+  <body>
+      <div id="area1">
+          
+      </div>
+      <div id="area2">
+       
+    </div>
+    <div id="area3">
+       
+    </div>
+    <div id="area4"></div>
+      <script>
+           let first=document.getElementById('area1');
+           first.innerText="First stone";
+           first.addEventListener('click',()=>{
+        
+            var x = document.getElementById("area2");
+         
+            x.style.display = "block";
+        
+          
+       })
+       let second=document.getElementById('area2');
+      second.innerText="Second stone";
+           second.addEventListener('click',()=>{
+        
+            var x = document.getElementById("area3");
+         
+            x.style.display = "block";
+          
+                })
+       let third=document.getElementById('area3');
+      third.innerText="third stone";
+third.addEventListener('click',()=>{
+
+ var x = document.getElementById("area4");
+
+ x.style.display = "block";
+ 
+})
+let fourth=document.getElementById('area4');
+fourth.innerText="fourth stone";
+fourth.addEventListener('click',()=>{
+    let newDiv=document.createElement('div');
+document.body.append(newDiv);
+
+newDiv.style.backgroundColor="blue";
+newDiv.style.width="450px";
+newDiv.style.marginLeft="400px";
+newDiv.style.height="50px"
+newDiv.innerText="Final stone";
+first.remove();
+})
+
+
+
+
+        </script>
+  </body>
+</html>
